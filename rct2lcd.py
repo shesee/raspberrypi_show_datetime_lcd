@@ -1,5 +1,4 @@
-#!python
-# -*- coding: utf-8 -*-
+#!/usr/bin/env python
 from smbus2 import SMBus
 from enum import Enum
 import time
