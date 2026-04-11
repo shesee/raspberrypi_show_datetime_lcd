@@ -28,7 +28,7 @@ def init ():
         #ディスプレイオン
         lcd_command(i2c, lcd_cmd.lcd_display, lcd_cmd_param.lcd_display_on)
         #クリア
-        lcd_command(i2c, lcd_cmd.lcd_clear,0)
+        lcd_command(i2c, lcd_cmd.lcd_clear,lcd_cmd_param.lcd_nop)
  
   
 #main
@@ -45,4 +45,4 @@ while 1:
         lcd_command(i2c, lcd_cmd.lcd_set_ddram_address, lcd_cmd_param.lcd_set_ddram_address_line2)
         writeMessage(i2c, line2)
 
-        time.sleep(0.3)
+        time.sleep(0.2)
