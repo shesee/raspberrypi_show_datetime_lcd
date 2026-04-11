@@ -32,7 +32,7 @@ def lcd_command(i2c:SMBus, cmd:lcd_cmd, prm:int):
         cmd: lcd_cmd コマンドデータ
         prm: int コマンドパラメーター
     '''
-    print("cmd %x" % cmd+prm)
+    print("cmd %x" % (cmd+prm))
     i2c.write_byte_data(lcd_addr, lcd_reg_addr.lcd_command, cmd + prm)
     lcd_delay(cmd_delay[cmd])
 
