@@ -15,7 +15,7 @@ def lcd_delay(sec:float):
         busyloop(sec)
 
 
-def command(i2c:SMBus, cmd):
+def lcd_command(i2c:SMBus, cmd):
     i2c.write_byte_data(lcd_addr, lcd_reg_addr.lcd_command, cmd)
     lcd_delay(cmd_delay[cmd])
 
