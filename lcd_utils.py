@@ -18,8 +18,10 @@ def lcd_delay(sec:float):
         sec: float 待機時間 ミリ秒以上の場合はsleep それ以下はタイトループを使う
     '''
     if sec > 0.001:
+        print("sleep" + str(sec))
         time.sleep(sec)
     else:
+        print("busyloop" + str(sec))
         busyloop(sec)
 
 
