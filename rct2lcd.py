@@ -40,9 +40,9 @@ while 1:
         line1 = dt.strftime('%y/%m/%d')
         line2 = dt.strftime('%H%M%S')
 
-        lcd_command(i2c, lcd_cmd.lcd_set_ddram_address+lcd_cmd_param.lcd_set_ddram_address_line1)
+        lcd_command(i2c, lcd_cmd.lcd_set_ddram_address, lcd_cmd_param.lcd_set_ddram_address_line1)
         writeMessage(i2c, line1)
-        lcd_command(i2c, lcd_cmd.lcd_set_ddram_address+lcd_cmd_param.lcd_set_ddram_address_line2)
+        lcd_command(i2c, lcd_cmd.lcd_set_ddram_address, lcd_cmd_param.lcd_set_ddram_address_line2)
         writeMessage(i2c, line2)
 
         time.sleep(0.3)
