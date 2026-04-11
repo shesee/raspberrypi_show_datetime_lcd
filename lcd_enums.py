@@ -1,11 +1,11 @@
-from enum import Enum
+from enum import IntEnum
 
-class lcd_reg_addr(Enum):  # AQM0802 LCDレジスタアドレス
+class lcd_reg_addr(IntEnum):  # AQM0802 LCDレジスタアドレス
     lcd_command = 0x00
     lcd_data = 0x40
 
 
-class lcd_cmd(Enum):  # AQM0802 LCDコマンド
+class lcd_cmd(IntEnum):  # AQM0802 LCDコマンド
     lcd_clear = 0x01  # LCDクリア
     lcd_home = 0x02  # リターンホーム
     lcd_entry_mode = 0x04  # エントリーモード
@@ -18,7 +18,7 @@ class lcd_cmd(Enum):  # AQM0802 LCDコマンド
     lcd_ext_contrast = 0x70  # 下四ビットでコントラスト下位四ビット指定 通常0x70+0x00=0x70
 
 
-class lcd_cmd_param(Enum):  # AQM0802 LCDコマンドのパラメーター
+class lcd_cmd_param(IntEnum):  # AQM0802 LCDコマンドのパラメーター
     lcd_entry_cur_dir = 0x02  # カーソル方向 増加/減数
     lcd_entry_shift = 0x01  # シフトのON/OFF
     lcd_display_on = 0x04  # ディスプレイオン
