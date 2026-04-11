@@ -19,6 +19,7 @@ class lcd_cmd(IntEnum):  # AQM0802 LCDコマンド
 
 
 class lcd_cmd_param(IntEnum):  # AQM0802 LCDコマンドのパラメーター
+    lcd_nop = 0x00 # フラグ無し
     lcd_entry_cur_dir = 0x02  # カーソル方向 増加/減数
     lcd_entry_shift = 0x01  # シフトのON/OFF
     lcd_display_on = 0x04  # ディスプレイオン

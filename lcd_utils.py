@@ -23,13 +23,14 @@ def lcd_delay(sec:float):
         busyloop(sec)
 
 
-def lcd_command(i2c:SMBus, cmd:int):
+def lcd_command(i2c:SMBus, cmd:lcd_cmd, prm:int):
     '''AQM0802 液晶にコマンドを送付する
     Args:
         i2c: SMBus i2cライブラリ
-        cmd: int コマンドデータ
+        cmd: lcd_cmd コマンドデータ
+        prm: int コマンドパラメーター
     '''
-    i2c.write_byte_data(lcd_addr, lcd_reg_addr.lcd_command, cmd)
+    i2c.write_byte_data(lcd_addr, lcd_reg_addr.lcd_command, cmd + prm)
     lcd_delay(cmd_delay[cmd])
 
 
