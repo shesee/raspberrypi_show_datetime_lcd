@@ -18,10 +18,10 @@ def lcd_delay(sec:float):
         sec: float 待機時間 ミリ秒以上の場合はsleep それ以下はタイトループを使う
     '''
     if sec > 0.001:
-        print("sleep %f",sec)
+        print("sleep %f" % sec)
         time.sleep(sec)
     else:
-        print("busyloop %f",sec)
+        print("busyloop %f" % sec)
         busyloop(sec)
 
 
@@ -32,7 +32,7 @@ def lcd_command(i2c:SMBus, cmd:lcd_cmd, prm:int):
         cmd: lcd_cmd コマンドデータ
         prm: int コマンドパラメーター
     '''
-    print("cmd %x", cmd+prm)
+    print("cmd %x" % cmd+prm)
     i2c.write_byte_data(lcd_addr, lcd_reg_addr.lcd_command, cmd + prm)
     lcd_delay(cmd_delay[cmd])
 
