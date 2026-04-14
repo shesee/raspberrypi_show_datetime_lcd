@@ -19,7 +19,7 @@ class lcd_cmd(IntEnum):  # AQM0802 LCDコマンド
 
 
 class lcd_cmd_param(IntEnum):  # AQM0802 LCDコマンドのパラメーター
-    lcd_nop = 0x00 # フラグ無し
+    lcd_noparam = 0x00 # フラグ無し
     lcd_entry_cur_dir = 0x02  # カーソル方向 増加/減数
     lcd_entry_shift = 0x01  # シフトのON/OFF
     lcd_display_on = 0x04  # ディスプレイオン
@@ -32,13 +32,13 @@ class lcd_cmd_param(IntEnum):  # AQM0802 LCDコマンドのパラメーター
     lcd_set_ddram_address_line1 = 0x00  # 一行目
     lcd_set_ddram_address_line2 = 0x40  # 二行目
     lcd_ext_osc_freq_bias = 0x08  # 1/4bias / 1/5bias
-    lcd_ext_osc_freq_normal = 0x04
+    lcd_ext_osc_freq_typical = 0x04
     lcd_ext_pwiccn_icon = 0x08  # Icon
     lcd_ext_pwiccn_boost = 0x04  # Boost
     lcd_ext_pwiccn_contrast_3V = 0x02  # 3V電源時のコントラスト
     lcd_ext_follower_on = 0x08  # 増幅オン
-    lcd_ext_follower_pow_normal = 0x04  # 通常の幅率
-    lcd_ext_contrast_normal = 0x00  # 通常の値
+    lcd_ext_follower_pow_typical = 0x04  # 通常の幅率
+    lcd_ext_contrast_typical = 0x00  # 通常の値
 
 lcd_addr=0x3e #AQM0802 LCD I2Cアドレス
 

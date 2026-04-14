@@ -1,5 +1,5 @@
 import time
-from lcd_enums import lcd_cmd, lcd_cmd_param, lcd_reg_addr, lcd_addr, cmd_delay,write_delay
+from lcd_enums import lcd_cmd, lcd_cmd_param, lcd_reg_addr, lcd_addr, cmd_delay, write_delay
 from smbus2 import SMBus
 
 
@@ -37,11 +37,11 @@ def lcd_command(i2c:SMBus, cmd:lcd_cmd, prm:int):
     lcd_delay(cmd_delay[cmd])
 
 
-def writeMessage(i2c:SMBus, message:str):
+def lcd_writeMessage(i2c:SMBus, message:str):
     '''AQM0802 液晶に表示文字列を送付する
     Args:
         i2c: SMBus i2cライブラリ
-        message: str 表示データ(ASCIIコード)
+        message: str 表示データ(ASCIIコード+半角カナ AQM0802の資料を参照のこと)
     '''
     charcode_list = []
     for message_char in message:
