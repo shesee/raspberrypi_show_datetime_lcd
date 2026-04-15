@@ -1,0 +1,24 @@
+概要
+
+ Raspberry pi からI2Cバス上に接続したAQM0802キャラクタ液晶に、現在の日時を表示するPythonコード
+
+ハードウェア
+
+ Raspberry piのI2Cバスはプルアップ抵抗の値が小さすぎて、AQM0802キャラクタ液晶では信号をLowに引く駆動力が足りません。
+なので、PCA9515 I2Cバスリピーターを介して接続してください。
+
+使い方
+
+    raspberrypizero :~/src/rct2lct $ python rct2lcd.py &
+
+内容
+
+ rct2lcd.py メインルーチン
+ lcd_utils.py AQM0802液晶の操作関数
+ lcd_enums.py AQM0802液晶を操作する際の定数定義
+
+特徴
+
+　秋月電子のページでわかる範囲のAQM0802操作レジスタを網羅しています。
+　動作は日時を液晶に表示するだけですが、lcd_utils.oyとlcd_enums.pyはAQMキャラクタ液晶を操作する際の
+　ライブラリに使えます。
