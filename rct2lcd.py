@@ -40,14 +40,15 @@ while 1:
 
         line1 = dt.strftime('%y/%m/%d')
         line2 = dt.strftime('%H:%M:%S')
-        
+
         if line1 != prevline1: #一行目
                 lcd_command(i2c, lcd_cmd.lcd_set_ddram_address, lcd_cmd_param.lcd_set_ddram_address_line1)
                 lcd_writeMessage(i2c, line1)
-        prevline1 = line1
+                prevline1 = line1
 
         if line2 != prevline2: #二行目
                 lcd_command(i2c, lcd_cmd.lcd_set_ddram_address, lcd_cmd_param.lcd_set_ddram_address_line2)
                 lcd_writeMessage(i2c, line2)
-        prevline2 = line2
+                prevline2 = line2
+
         time.sleep(0.25)
