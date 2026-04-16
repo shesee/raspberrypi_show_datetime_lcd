@@ -9,11 +9,11 @@
 
 使い方
 
-    raspberrypizero :~/src/rct2lct $ python rct2lcd.py &
+    raspberrypizero :~/src/raspberrypi_show_datetime_lcd $ python rtc2lcd.py &
 
 内容
 
- rct2lcd.py メインルーチン
+ rtc2lcd.py メインルーチン
  lcd_utils.py AQM0802液晶の操作関数
  lcd_enums.py AQM0802液晶を操作する際の定数定義
 
@@ -21,4 +21,4 @@
 
 　秋月電子のページでわかる範囲のAQM0802操作レジスタを網羅しています。
 　動作は日時を液晶に表示するだけですが、lcd_utils.oyとlcd_enums.pyはAQMキャラクタ液晶を操作する際の
-　ライブラリに使えます。
+　ライブラリに使える程度には汎用的に書いています。
