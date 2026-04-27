@@ -2,27 +2,20 @@ import time
 from lcd_enums import lcd_cmd, lcd_cmd_param, lcd_reg_addr, lcd_addr, cmd_delay, write_delay
 from smbus2 import SMBus
 
-
+''' Raspberry pi だとマイクロ秒単位のスリープが可能なので削除
 def busyloop(sec:float):
-    '''タイトループによるマイクロ秒単位の待機 
-    Args:
-        sec: float 待機時間 秒の浮動小数点
-    '''
     st = time.perf_counter()
     while time.perf_counter() - st < sec:
         pass
+'''
 
 def lcd_delay(sec:float):
     '''LCDの動作を待機する
     Args:
-        sec: float 待機時間 ミリ秒以上の場合はsleep それ以下はタイトループを使う
+        sec: float 待機時間
     '''
-    if sec > 0.001:
-        #print("sleep %f" % sec)
-        time.sleep(sec)
-    else:
-        #print("busyloop %f" % sec)
-        busyloop(sec)
+    #print("sleep %f" % sec)
+    time.sleep(sec)
 
 
 def lcd_command(i2c:SMBus, cmd:lcd_cmd, prm:int):
